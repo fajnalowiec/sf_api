@@ -9,3 +9,8 @@
 
 controllers:
     resource: routing.controllers
+
+hello:
+  path: /hello
+  controller: App\Controller\HelloController::index
+  methods: [GET]
