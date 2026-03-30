@@ -14,3 +14,32 @@ hello:
   path: /hello
   controller: App\Controller\HelloController::index
   methods: [GET]
+
+loved_game_create:
+    path: /loved-games
+    controller: App\Controller\LovedGameController::create
+    methods: [POST]
+
+loved_game_delete:
+    path: /loved-games/{id}
+    controller: App\Controller\LovedGameController::delete
+    methods: [DELETE]
+    requirements:
+        id: '\d+'
+
+player_loved_games:
+    path: /players/{id}/loved-games
+    controller: App\Controller\PlayerController::getLovedGames
+    methods: [GET]
+    requirements:
+        'id': '\d+'
+
+games_most_loved:
+    path: /games/most-loved/
+    controller: App\Controller\GameController::getMostLoved
+    methods: [GET]
+
+games_read_all:
+    path: /games
+    controller: App\Controller\GameController::getAll
+    methods: [GET]
